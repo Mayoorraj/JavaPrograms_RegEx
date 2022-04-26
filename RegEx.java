@@ -12,7 +12,8 @@ public class RegEx {
         if (Pattern.matches("^[A-Z]{1}[a-z]{2,}", firstName)) {
             System.out.println( "Valid entry.\n");
         } else {
-            System.err.println("Invalid entry!\n-First letter should be capital,other letters should be small" +
+            System.err.println("Invalid entry!" +
+                    "\n-First letter should be capital,other letters should be small" +
                     "\n-First name should contain at least 3 letters\n");
             checkFirstName();
         }
@@ -26,7 +27,8 @@ public class RegEx {
         if (Pattern.matches("^[A-Z]{1}[a-z]{2,}", lastName)) {
             System.out.println("valid entry.\n");
         } else {
-            System.err.println("Invalid entry!\n-First letter should be capital" +
+            System.err.println("Invalid entry!" +
+                    "\n-First letter should be capital" +
                     "\n-Last name should contain at least 3 letters\n");
             checkLastName();
         }
@@ -41,14 +43,15 @@ public class RegEx {
             System.out.println("Valid entry.\n");
         }
         else {
-            System.err.println("Invalid entry!\n-user name should have at least 3 letters" +
+            System.err.println("Invalid entry!" +
+                    "\n-user name should have at least 3 letters" +
                     "\n-It should contain . after company name, company domain" +
                     "\n-Company name should be 2 letters" +
                     "\n-Company domain should be 2 letters" );
             checkEmail();
         }
     }
-
+    //    Mobile phone no. pattern
     public static void checkMobileNo() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Phone No : ");
@@ -57,17 +60,34 @@ public class RegEx {
             System.out.println("Valid entry.");
         }
         else {
-            System.err.println("Invalid entry!\n-Mobile phone no. should contain 12 digits including country code" +
+            System.err.println("Invalid entry!" +
+                    "\n-Mobile phone no. should contain 12 digits including country code" +
                     "\n-It should contain only digits");
             checkMobileNo();
         }
     }
 
-    public static void main(String[] args) {
+    // Password pattern
+    public static void checkPassword() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Password : ");
+        String password = sc.nextLine();
+        if(Pattern.matches("^[a-zA-Z0-9+-_!@#$%^&*().]{8,}",password)){
+            System.out.println("Valid entry.");
+        }
+        else {
+            System.err.println("Invalid entry!" +
+                    "\n-Password length should be of minimum 8 characters" );
+            checkPassword();
+        }
+    }
 
+    public static void main(String[] args) {
+        System.out.println("Register new user here-");
         checkFirstName();
         checkLastName();
         checkEmail();
         checkMobileNo();
+        checkPassword();
     }
 }
