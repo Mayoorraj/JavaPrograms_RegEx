@@ -71,12 +71,13 @@ public class RegEx {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Password : ");
         String password = sc.nextLine();
-        if (Pattern.matches("^(?=.*[A-Z])[a-zA-Z0-9+-_!@#$%^&*().]{8,}$", password)) {
+        if (Pattern.matches("^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9+-_!@#$%^&*(){}'.,]{8,}$", password)) {
             System.out.println("Valid entry.");
         } else {
             System.err.println("Invalid entry!" +
                     "\n-Password length should be of minimum 8 characters" +
-                    "\n-Password should contain at least one capital letter");
+                    "\n-Password should contain at least one capital letter" +
+                    "\n-Password should contain at least one numeric character");
             checkPassword();
         }
     }
