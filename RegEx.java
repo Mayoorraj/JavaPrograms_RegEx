@@ -76,7 +76,7 @@ public class RegEx {
         } else {
             System.err.println("Invalid entry!" +
                     "\n-Password length should be of minimum 8 characters" +
-                    "\n-Psassword should contain at least one capital letter");
+                    "\n-Password should contain at least one capital letter");
             checkPassword();
         }
     }
