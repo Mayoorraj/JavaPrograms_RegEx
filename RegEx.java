@@ -10,7 +10,7 @@ public class RegEx {
         System.out.println("Enter the first name: ");
         String firstName = sc.nextLine();
         if (Pattern.matches("^[A-Z]{1}[a-z]{2,}", firstName)) {
-            System.out.println( "Valid entry.\n");
+            System.out.println("Valid entry.\n");
         } else {
             System.err.println("Invalid entry!" +
                     "\n-First letter should be capital,other letters should be small" +
@@ -39,27 +39,26 @@ public class RegEx {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Email : ");
         String email = sc.nextLine();
-        if(Pattern.matches("^[a-zA-Z0-9]+([.][a-zA-Z0-9]+)*[@][a-z]+[.][a-z]{2,3}([.][a-z]{2})?$",email)){
+        if (Pattern.matches("^[a-zA-Z0-9]+([.][a-zA-Z0-9]+)*[@][a-z]+[.][a-z]{2,3}([.][a-z]{2})?$", email)) {
             System.out.println("Valid entry.\n");
-        }
-        else {
+        } else {
             System.err.println("Invalid entry!" +
                     "\n-user name should have at least 3 letters" +
                     "\n-It should contain . after company name, company domain" +
                     "\n-Company name should be 2 letters" +
-                    "\n-Company domain should be 2 letters" );
+                    "\n-Company domain should be 2 letters");
             checkEmail();
         }
     }
+
     //    Mobile phone no. pattern
     public static void checkMobileNo() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Phone No : ");
         String mobileNo = sc.nextLine();
-        if( Pattern.matches("[0-9]{2}+[ ][0-9]{10}$",mobileNo)){
+        if (Pattern.matches("[0-9]{2}+[ ][0-9]{10}$", mobileNo)) {
             System.out.println("Valid entry.");
-        }
-        else {
+        } else {
             System.err.println("Invalid entry!" +
                     "\n-Mobile phone no. should contain 12 digits including country code" +
                     "\n-It should contain only digits");
@@ -72,12 +71,12 @@ public class RegEx {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Password : ");
         String password = sc.nextLine();
-        if(Pattern.matches("^[a-zA-Z0-9+-_!@#$%^&*().]{8,}",password)){
+        if (Pattern.matches("^(?=.*[A-Z])[a-zA-Z0-9+-_!@#$%^&*().]{8,}$", password)) {
             System.out.println("Valid entry.");
-        }
-        else {
+        } else {
             System.err.println("Invalid entry!" +
-                    "\n-Password length should be of minimum 8 characters" );
+                    "\n-Password length should be of minimum 8 characters" +
+                    "\n-Psassword should contain at least one capital letter");
             checkPassword();
         }
     }
