@@ -85,10 +85,10 @@ public class RegEx {
 
     public static void main(String[] args) {
         System.out.println("Register new user here-");
-//        checkFirstName();
-//        checkLastName();
-//        checkEmail();
-//        checkMobileNo();
+        checkFirstName();
+        checkLastName();
+        checkEmail();
+        checkMobileNo();
         checkPassword();
     }
 }
